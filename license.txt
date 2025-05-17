@@ -1,0 +1,11 @@
+Model Information:
+* title:	Whiteware Sherd - Hist. Arch Student Scan
+* source:	https://sketchfab.com/3d-models/whiteware-sherd-hist-arch-student-scan-c1c698b8aecc45f19efea97dc930e938
+* author:	Digital Archaeology Laboratory (https://sketchfab.com/digitalarch)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Whiteware Sherd - Hist. Arch Student Scan" (https://sketchfab.com/3d-models/whiteware-sherd-hist-arch-student-scan-c1c698b8aecc45f19efea97dc930e938) by Digital Archaeology Laboratory (https://sketchfab.com/digitalarch) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

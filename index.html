@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu da Fortaleza</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px 20px; /* Modificação 2 - Margens ajustadas */
+        }
+        .password-container {
+            position: relative;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        /* Modificação 1 - Estilo do corte diagonal */
+        .toggle-password.cortado::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: red;
+            transform: rotate(-45deg) translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+        .error-message {
+            text-align: left;
+            margin-left: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à página do Projeto de Preservação de Bens Culturais e Gestão do Museu Fortaleza de São José de Macapá</h1>
+        <p>Projeto submetido ao Edital FAPEAP nº 001/2025</p>
+        
+        <p><strong>Coordenação: Prof. Dr. Sidney da Silva Lobato</strong></p>
+        
+        <p>Digite a senha para acessar o site:</p>
+        
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Digite a senha">
+            <button class="toggle-password" onclick="togglePassword()">👁️</button>
+        </div>
+        <button onclick="checkPassword()">Acessar</button>
+        
+        <div id="errorMessage" class="error-message">
+            <p style="color: #ff4444; margin: 5px 0; font-weight: bold;">Senha incorreta</p>
+            <p style="color: #ff4444; margin: 5px 0; font-weight: bold;">Verifique a senha correta no projeto submetido à FAPEAP para avaliação</p>
+        </div>
+    </div>
+
+    <script>
+        const correctHash = '4a2ddf148c5a9c42151a529e8cbdcc06'; //
+
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleButton = document.querySelector('.toggle-password');
+            
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+            toggleButton.classList.toggle('cortado'); // Modificação 1 - Toggle do corte
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('password');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (md5(input.value) === correctHash) {
+                window.location.href = 'inicio.html';
+            } else {
+                errorMessage.style.display = 'block';
+                input.focus();
+            }
+        }
+
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkPassword();
+        });
+    </script>
+</body>
+</html>
